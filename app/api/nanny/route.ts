@@ -1,6 +1,10 @@
 // app/api/nanny/route.ts
-export const runtime = 'edge';  // Add this line
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET() {
-  return new Response('Hello World');
+export const config = {
+  runtime: 'edge',
+};
+
+export async function GET(request: NextRequest) {
+  return NextResponse.json({ message: 'Hello World' });
 }
