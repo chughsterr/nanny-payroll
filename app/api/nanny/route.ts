@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import type { NannyFormData } from '@/types/nanny';
 
 const prisma = new PrismaClient();
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const data: NannyFormData = await request.json();
     
